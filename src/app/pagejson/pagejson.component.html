@@ -1,0 +1,82 @@
+<p>
+  {{pageData.title}}
+</p>
+
+
+<!-- <div id="progressBar">
+        <div class="loader"></div>
+</div> -->
+<div>
+  <!--<div class="heading-sec">
+        <div class="row">
+            <div class="col-md-4 column">
+                <div class="heading-profile">
+                    <h2 ng-bind="pageData.title"></h2>
+                </div>
+            </div>
+        </div>
+    </div>-->
+  <!-- Top Bar Chart -->
+  <div class="panel-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="widget">
+          <div class="table-area">
+            <div class="widget-title">
+              <!-- <div class="pull-right">
+                <form class="search-form mr-form" *ngIf="pageData.noSearch">
+                  <input ng-change="getAllItems(true)" ng-model="search.keyword" placeholder="{{pageData.placeholder ? pageData.placeholder : 'Search Here...'}}"
+                    type="text" />
+                </form>
+                <a class="btn" ng-class="btn.class" ng-click="json.eventAction(btn,null,userData)" ng-repeat="btn in pageData.button">
+                  <i class="fa" ng-class="btn.icon"></i>{{btn.name}}</a>
+                <a class="btn btn-danger" ng-click="downloadDeliveryRequests()" ng-if="pageData.title=='DeliveryRequest'">
+                  <i class="fa fa-download"></i>Download</a>
+                <a class="btn btn-danger" ng-click="downloadOrderRequests()" ng-if="pageData.title=='Order' && isSuperAdmin">
+                  <i class="fa fa-download"></i>Download</a>
+                <a class="btn btn-danger" ng-click="openQRmodal()" ng-if="pageData.qr">
+                  <i class="fa fa-download"></i>Download QR</a>
+                <a class="btn btn-primary" ng-click="createEarningModal()" ng-if="pageData.earning">Create</a>
+                <a class="btn btn-danger" ng-click="openErrorPOP()" ng-if="pageData.popError && isSuperAdmin">Error</a>
+              </div> -->
+              <h3>{{pageData.title}}
+                <!-- <span class="tableTotal">Total : {{totalItems}}</span> -->
+              </h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+
+                    <th *ngFor="let field of pageData.fields">{{field.name}}</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of foundData" (click)="onSelect(item)">
+                    <td *ngFor="let field of  pageData.fields">
+                      <span *ngIf="field.field">{{item[field.tableRef][field.field]}}</span>
+                      <span *ngIf="!field.field">{{item[field.tableRef]}}</span>
+                      <!-- <view-field ng-click="pageData.action ? json.eventAction(pageData.action[0],item,userData) : ''" ng-disabled="field.type!='hyprelink'"
+                        type="field" value="item"></view-field> -->
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="tableData" ng-show="totalItems===0">
+              <h5>No data found</h5>
+            </div>
+            <div class="tableData" ng-show="totalItems===undefined">
+              <h5>Loading Data</h5>
+            </div>
+            <ul boundary-links="true" class="pagination-sm" force-ellipses="true" items-per-page="maxRow" max-size="template.pageMax"
+              ng-change="changePage(currentPage, search.keyword);" ng-if="totalItems" ng-model="currentPage" total-items="totalItems"
+              uib-pagination=""></ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

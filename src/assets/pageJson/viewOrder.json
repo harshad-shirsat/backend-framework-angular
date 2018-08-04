@@ -1,0 +1,73 @@
+{
+  "title": "Order",
+  "description": "List of Orders",
+  "pageType": "view",
+  "sendIdWithCreate": true,
+  "placeholder": "Search by Order ID",
+  "searchFields": ["orderId"],
+  "urlFields": ["_id"],
+  "fields": [{
+    "name": "Order Id",
+    "isSort": "",
+    "tableRef": "orderId",
+    "type": "hyperlink"
+  }, {
+    "name": "Customer Name",
+    "isSort": "",
+    "tableRef": "customerId",
+    "field": "name"
+  }, {
+    "name": "Order Date",
+    "isSort": "",
+    "tableRef": "createdAt",
+    "type": "date"
+  }, {
+    "name": "Payment Status",
+    "isSort": "",
+    "type": "status",
+    "tableRef": "paymentStatus"
+  }, {
+    "name": "Order Status",
+    "isSort": "",
+    "type": "status",
+    "tableRef": "orderStatus"
+  }],
+  "action": [{
+    "name": "",
+    "icon": "fa-pencil",
+    "buttonClass": "btn-primary",
+    "type": "editOrder",
+    "fieldsToSend": {
+      "_id": "_id"
+    }
+  }, {
+    "name": "",
+    "icon": "fa-trash",
+    "buttonClass": "btn-danger",
+    "type": "apiCallConfirm",
+    "title": "Delete Order",
+    "content": "Are you sure you want to delete Order?",
+    "api": "Order/delete",
+    "deleteStatus": true,
+    "fieldsToSend": {
+      "name": "_id",
+      "value": "_id"
+    }
+  }],
+  "button": [{
+    "name": "Create",
+    "icon": "",
+    "class": "btn-success",
+    "type": "editOrder"
+  }, {
+    "name": "Filter",
+    "icon": "funnel",
+    "class": "btn-primary",
+    "type": "filter",
+    "action": "filterOrder"
+  }],
+  "apiCall": {
+    "url": "Order/search",
+    "params": "_id"
+  }
+}

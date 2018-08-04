@@ -1,0 +1,30 @@
+<ul>
+  <li *ngFor="let menu of navigation" class="menuHover" style="color: #ffffff">
+    <div>
+      <a *ngIf="menu.sref" href="{{menu.sref}}">
+        <i class="ln-{{menu.icon}}" *ngIf="menu.icon"></i>
+        <img [src]="menu.img" alt="" *ngIf="menu.img">
+        <span style="color: #ffffff">{{menu.name}}</span>
+      </a>
+      <!-- <a *ngIf="menu.sref == ''" class="o-i">
+        <i class="ln-{{menu.icon}}" *ngIf="menu.icon"></i>
+        <img ng-src="{{menu.img}}" alt="" *ngIf="menu.img">
+        <span>{{menu.name}}</span>
+      </a>
+      <ul *ngIf="menu.subnav!='';">
+        <li *ngFor="let submenu of menu.subnav" *ngIf="submenu.accessible">
+          <a ui-sref="{{submenu.sref}}" *ngIf="submenu.sref">
+            <i class="ln-{{submenu.icon}}"></i>
+            <span>{{submenu.name}}</span>
+          </a>
+          <a href="{{submenu.link}}" *ngIf="submenu.link">
+            <i class="ln-{{submenu.icon}}"></i>
+            <span>{{submenu.name}}</span>
+          </a>
+        </li>
+      </ul> -->
+    </div>
+
+  </li>
+</ul>
+<!-- <p>Navigation menu</p> -->
