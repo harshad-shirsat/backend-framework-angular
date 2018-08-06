@@ -1,0 +1,83 @@
+{
+  "title": "Edit Order",
+  "name": "Order",
+  "jsonPage": "viewOrder",
+  "desciption": "",
+  "pageType": "edit",
+  "urlFields": ["_id"],
+  "fields": [{
+    "name": "Order Id",
+    "type": "text",
+    "tableRef": "orderId",
+    "placeholder": "Enter Order Id",
+    "id": "orderId",
+    "validation": ["required", "trim", ""],
+    "url": ""
+  }, {
+    "name": "orderedThrough",
+    "type": "text",
+    "tableRef": "orderedThrough",
+    "placeholder": "Ordered Through",
+    "id": "orderedThrough",
+    "validation": ["", "trim", ""],
+    "url": ""
+  }, {
+    "name": "Order Status",
+    "type": "text",
+    "tableRef": "orderStatus",
+    "placeholder": "Enter Order Status",
+    "id": "landmark",
+    "validation": ["required", "trim", ""],
+    "url": ""
+  }, {
+    "name": "gstNumber",
+    "type": "text",
+    "tableRef": "gstNumber",
+    "placeholder": "Enter GST Number",
+    "id": "gstNumber",
+    "validation": ["required", "trim", ""],
+    "url": ""
+  }],
+  "action": [{
+    "name": "submit",
+    "action": "submitProduct",
+    "stateName": {
+      "page": "viewOrder",
+      "json": {
+        "id": "viewOrder"
+      }
+    }
+  }, {
+    "name": "cancel",
+    "sideMenuRedirect": true,
+    "stateName": {
+      "page": "viewOrder",
+      "json": {
+        "id": "viewOrder"
+      }
+    }
+  }, {
+    "name": "",
+    "icon": "fa-trash",
+    "buttonClass": "btn-danger",
+    "type": "apiCallConfirm",
+    "title": "Delete Order",
+    "content": "Are you sure you want to delete Order?",
+    "api": "order/delete",
+    "stateName": {
+      "page": "viewOrder",
+      "json": {
+        "id": "viewOrder"
+      }
+    }
+  }],
+  "apiCall": {
+    "url": "Order/createOrder",
+    "params": "_id"
+  },
+  "preApi": {
+    "url": "Order/getOneOrder",
+    "params": "_id"
+  }
+
+}

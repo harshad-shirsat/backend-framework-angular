@@ -1,3 +1,17 @@
-<p>
-  detail works!
-</p>
+<div class="form-group" *ngFor="let item of pageData.fields">
+  <div>
+    <label>{{item.name}}
+      <!-- <span ng-show="item.required">*</span> -->
+      <!-- <span ng-if="item.note" class="note-red">(Note : {{item.note}})</span> -->
+    </label>
+  </div>
+
+  <div>
+    <input item="text" name="{{item.tableRef}}" placeholder="{{item.placeholder}}" [(ngModel)]="detailData[item.tableRef]" class="form-control"
+      #name="ngModel" *ngIf="!item.field">
+    <input item="text " name="{{item.tableRef}} " placeholder="{{item.placeholder}}" [(ngModel)]="detailData[item.tableRef][item.field]"
+      #name="ngModel" class="form-control " *ngIf="item.field">
+  </div>
+
+  <!-- <div class="error-msg " *ngIf="detailData[item.tableRef].$invalid && detailData[item.tableRef].$touched ">Please enter valid {{item.name}}</div> -->
+</div>

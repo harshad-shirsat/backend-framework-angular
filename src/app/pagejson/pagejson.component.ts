@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Routes, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, Routes, RouterModule } from '@angular/router';//router:to navigate to other url ;ActivatedRoute:to get parameter value
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
@@ -50,7 +50,9 @@ export class PagejsonComponent implements OnInit {
   }
 
   onSelect(item) {
-    console.log("item", item);
+    if (item._id) {
+      this.router.navigate(['/detail/' + this.pageData.action[0].action + '/' + item._id]);
+    }
   }
 
 }

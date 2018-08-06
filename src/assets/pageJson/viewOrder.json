@@ -36,6 +36,7 @@
     "name": "",
     "icon": "fa-pencil",
     "buttonClass": "btn-primary",
+    "action": "editOrder",
     "type": "editOrder",
     "fieldsToSend": {
       "_id": "_id"
